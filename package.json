@@ -1,0 +1,33 @@
+{
+  "name": "pull-request-scanner",
+  "version": "1.0.0",
+  "main": "index.js",
+  "description": "Scans Github pull requests for analysis",
+  "author": "Britney L. <ultrabluewolf-fb2@yahoo.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "local-start": "./node_modules/.bin/nodemon server.js | ./node_modules/.bin/bunyan -o short",
+    "test": "echo 'no tests... :('"
+  },
+  "dependencies": {
+    "axios": "^0.17.1",
+    "bluebird": "^3.5.1",
+    "bunyan": "^1.8.12",
+    "config": "^1.28.1",
+    "dotenv": "^4.0.0",
+    "lodash": "^4.17.4",
+    "moment": "^2.19.3",
+    "node-uuid": "^1.4.8"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1",
+    "nodemon": "^1.12.5",
+    "sinon": "^4.1.2",
+    "sinon-chai": "^2.14.0"
+  }
+}

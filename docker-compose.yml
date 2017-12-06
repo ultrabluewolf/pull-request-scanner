@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+
+  service:
+    build: ./
+    command: npm start
+    volumes:
+      - ./:/opt/node/pull-request-scanner
+    env_file:
+      - .env
