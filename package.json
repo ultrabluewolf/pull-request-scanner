@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "local-start": "./node_modules/.bin/nodemon server.js | ./node_modules/.bin/bunyan -o short",
+    "local-start": "run() { ./node_modules/.bin/nodemon index.js $1 | ./node_modules/.bin/bunyan -o short; }; run",
     "test": "echo 'no tests... :('"
   },
   "dependencies": {
