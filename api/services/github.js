@@ -22,7 +22,6 @@ const emitLatencyOfQuery = (startTime, query, msg = 'request completed.') => {
 
 // check for errors in the response and return body of response
 const verifyResponse = (resp) => {
-  logger.debug({ data: resp.data });
   if (!resp || !resp.data || !resp.data.data || !!resp.data.errors) {
     logger.error({ data: { statusCode: resp.statusCode, body: resp.data }}, 'request issue!');
     return Promise.reject(resp.data);
@@ -60,7 +59,6 @@ const fetchRepos = (organization, max = 100, perPage = 100, afterId = null, tota
 
   const flattenEdgesAndNodes = (data) => {
     const results = Object.assign({}, data);
-    // logger.debug(results);
     results.organization.pageInfo = results.organization.repositories.pageInfo;
     results.organization.repositories = results.organization.repositories.nodes;
     return Promise.resolve(results);
@@ -141,7 +139,6 @@ const fetchPullRequests = (name, owner, max = 100, perPage = 100, afterId = null
 
   const flattenEdgesAndNodes = (data) => {
     const results = Object.assign({}, data);
-    // logger.debug(results);
     results.repository.pageInfo = results.repository.pullRequests.pageInfo;
     results.repository.pullRequests = results.repository.pullRequests.nodes;
     return results;

@@ -11,7 +11,7 @@
   "scripts": {
     "start": "node index.js",
     "local-start": "run() { ./node_modules/.bin/nodemon index.js $1 | ./node_modules/.bin/bunyan -o short; }; run",
-    "test": "echo 'no tests... :('"
+    "test": "NODE_ENV=test ./node_modules/.bin/mocha ./api/**/*.spec.js"
   },
   "dependencies": {
     "axios": "^0.17.1",
@@ -26,6 +26,7 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "mocha": "^4.0.1",
+    "nock": "^9.1.4",
     "nodemon": "^1.12.5",
     "sinon": "^4.1.2",
     "sinon-chai": "^2.14.0"
