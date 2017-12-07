@@ -18,8 +18,8 @@ if (process.argv.length !== 3) {
 const organization = process.argv[2];
 logger.debug({ data: { organization } }, 'fetching data for organization.');
 
-const maxRepos = 100;
-const maxPullRequests = 1000; // per repo
+const maxRepos = config.get('github.limits.repos');
+const maxPullRequests = config.get('github.limits.pullrequests'); // per repo
 
 github.fetchRepos(organization, maxRepos)
   .then((data) => github.fetchPullRequestsForRepos(data.organization.repositories, maxPullRequests))

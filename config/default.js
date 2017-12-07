@@ -6,4 +6,11 @@ module.exports = {
     level: 'debug',
   },
 
+  github: {
+    limits: {
+      repos: 100,
+      pullrequests: 5000,
+    },
+  },
+
 };
