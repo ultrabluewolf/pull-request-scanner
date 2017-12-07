@@ -13,27 +13,31 @@ Create dotenv file and update env values as desired
 `cp .env.example .env`
 
 _using docker compose_
-Build and run service and db containers
+Build and start container
 `docker-compose build`
 `docker-compose up`
+
+And in a new tab run:
+`docker-compose exec node npm start <organization>`
 
 or
 
 _without docker compose_
 Install libraries and run service
 `yarn install`
-`npm start`
+`npm start <organization>`
 
 Available env vars:
 
 - ENV
 - NODE_ENV
 - LOGLEVEL
-- GITHUB_API_KEY
+- GITHUB_URL
+- GITHUB_API_TOKEN
 
 #### Tests
 
-`docker-compose exec service npm test`
+`docker-compose exec node npm test`
 
 or
 

@@ -2,9 +2,9 @@ version: '2'
 
 services:
 
-  service:
+  node:
     build: ./
-    command: npm start
+    command: tail -f /dev/null
     volumes:
       - ./:/opt/node/pull-request-scanner
     env_file:
