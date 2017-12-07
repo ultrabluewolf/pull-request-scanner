@@ -13,7 +13,7 @@ otherwise, see:
 
 Create dotenv file and update env values as desired
 
-`cp .env.example .env`
+`cp .env.sample .env`
 
 _using docker compose_
 
