@@ -7,7 +7,8 @@ module.exports = {
   },
 
   github: {
-    key: 'GITHUB_API_KEY',
+    url: 'GITHUB_URL',
+    key: 'GITHUB_API_TOKEN',
   },
 
 };
