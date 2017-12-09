@@ -25,6 +25,9 @@ github.fetchRepos(organization, maxRepos)
   .then((data) => github.fetchPullRequestsForRepos(data.organization.repositories, maxPullRequests))
   .then((data) => {
     const stats = github.getTotalPullRequestsFromResponses(data);
+    const prStats = github.getNumberOfPullRequestMergedPerWeek(data);
+    const avgAndMeds = github.getAvgAndMedianOfPullRequestMergedFromCreationToMergePerWeek(data);
     logger.info({ data: { total: stats.total, repos: data.length, stats } }, 'total pull requests');
+    logger.info({ data: { /*numPRs: prStats,*/ avgAndMeds } }, 'other pull request metrics');
   })
   .catch((err) => logger.error(err));

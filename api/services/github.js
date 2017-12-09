@@ -204,9 +204,70 @@ const getTotalPullRequestsFromResponses = (data) => {
     return result;
 };
 
+const MERGED = 'MERGED';
+
+const getStartOfWeek = (timestamp) => {
+  const dt = moment(timestamp);
+  const startOfWeek = dt.clone().day('Sunday');
+  const startOfWeekStr = startOfWeek.utc().format('YYYY-MM-DD');
+  return startOfWeekStr;
+};
+
+const getNumberOfPullRequestMergedPerWeek = (data) => {
+  const result = { repos: {} };
+  logger.debug('-----------------');
+  // logger.debug(data);
+  result.repos.pullRequests = data.map(({ repository }) => {
+    return repository.pullRequests.reduce((acm, pullRequest) => {
+      if (pullRequest.state === MERGED) {
+        const startOfWeekStr = getStartOfWeek(pullRequest.mergedAt);
+        if (!acm[startOfWeekStr]) {
+          acm[startOfWeekStr] = 0;
+        }
+        acm[startOfWeekStr] += 1;
+      }
+      return acm;
+    }, { });
+  });
+  return result;
+};
+
+const getAvgAndMedianOfPullRequestMergedFromCreationToMergePerWeek = (data) => {
+  const result = { repos: {} };
+  logger.debug('-----------------');
+  // logger.debug(data);
+  result.repos.pullRequests = data.map(({ repository }) => {
+    const diffs = repository.pullRequests.map((pullRequest) => {
+      if (pullRequest.state === MERGED) {
+        const startOfWeekStr = getStartOfWeek(pullRequest.mergedAt);
+        const diff = moment(pullRequest.mergedAt).diff(pullRequest.createdAt);
+        return diff;
+      }
+      return null;
+    })
+    .filter((timestamp) => timestamp);
+
+    diffs.sort((a, b) => a - b);
+    const avg = diffs.reduce((acm, diff) => acm + diff, 0) / diffs.length;
+    const middleIdx = diffs.length/2;
+    let median = diffs[middleIdx];
+    if (diffs.length % 2 === 1) { // Wat?
+      const leftIdx = Math.floor(middleIdx);
+      const rightIdx = Math.ceil(middleIdx);
+      median = (diffs[leftIdx] + diffs[rightIdx]) / 2;
+      logger.debug({ data:{ avg, median, middleIdx, rightIdx, leftIdx, diffs } }, '#1');
+    }
+    logger.debug({ data:{ avg, median, middleIdx, diffs } }, '#2');
+    return { avg, median };
+  });
+  return result;
+};
+
 module.exports = {
   fetchRepos,
   fetchPullRequests,
   fetchPullRequestsForRepos,
   getTotalPullRequestsFromResponses,
+  getNumberOfPullRequestMergedPerWeek,
+  getAvgAndMedianOfPullRequestMergedFromCreationToMergePerWeek,
 };
