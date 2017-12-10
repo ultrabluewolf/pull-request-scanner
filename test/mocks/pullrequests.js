@@ -473,6 +473,68 @@ module.exports = {
                     ]
                   },
                 },
+                {
+                  "title": "Refactoring Frenzy",
+                  "state": "OPEN",
+                  "id": "4343",
+                  "number": 6,
+                  "url": "https://github.com/myorg/my-beta-repo/pull/6",
+                  "bodyText": "",
+                  "createdAt": "2017-12-21T19:34:59Z",
+                  "lastEditedAt": "2017-12-21T21:23:17Z",
+                  "publishedAt": "2017-12-21T19:34:59Z",
+                  "closedAt": null,
+                  "mergedAt": null,
+                  "merged": false,
+                  "closed": false,
+                  "changedFiles": 2,
+                  "additions": 54,
+                  "deletions": 4,
+                  "commits": {
+                    "nodes": [
+                      {
+                        "commit": {
+                          "author": {
+                            "user": {
+                              "login": "realnotabot",
+                              "url": "https://github.com/realnotabot"
+                            }
+                          },
+                          "message": "abc 123",
+                          "committedDate": "2017-12-21T19:32:07Z"
+                        }
+                      },
+                      {
+                        "commit": {
+                          "author": {
+                            "user": {
+                              "login": "realnotabot",
+                              "url": "https://github.com/realnotabot"
+                            }
+                          },
+                          "message": "bcd 234",
+                          "committedDate": "2017-12-21T19:51:21Z"
+                        }
+                      },
+                      {
+                        "commit": {
+                          "author": {
+                            "user": {
+                              "login": "realnotabot",
+                              "url": "https://github.com/realnotabot"
+                            }
+                          },
+                          "message": "cde 345",
+                          "committedDate": "2017-12-21T19:53:01Z"
+                        }
+                      }
+                    ]
+                  },
+                  "author": {
+                    "login": "realnotabot",
+                    "url": "https://github.com/realnotabot"
+                  }
+                },
               ],
               "pageInfo": {
                 "hasNextPage": false,
@@ -898,6 +960,60 @@ module.exports = {
                     }
                   }
                 ],
+              },
+              {
+                "title": "Refactoring Frenzy",
+                "state": "OPEN",
+                "id": "4343",
+                "number": 6,
+                "url": "https://github.com/myorg/my-beta-repo/pull/6",
+                "bodyText": "",
+                "createdAt": "2017-12-21T19:34:59Z",
+                "lastEditedAt": "2017-12-21T21:23:17Z",
+                "publishedAt": "2017-12-21T19:34:59Z",
+                "closedAt": null,
+                "mergedAt": null,
+                "merged": false,
+                "closed": false,
+                "changedFiles": 2,
+                "additions": 54,
+                "deletions": 4,
+                "commits": [
+                  {
+                    "author": {
+                      "user": {
+                        "login": "realnotabot",
+                        "url": "https://github.com/realnotabot"
+                      }
+                    },
+                    "message": "abc 123",
+                    "committedDate": "2017-12-21T19:32:07Z"
+                  },
+                  {
+                    "author": {
+                      "user": {
+                        "login": "realnotabot",
+                        "url": "https://github.com/realnotabot"
+                      }
+                    },
+                    "message": "bcd 234",
+                    "committedDate": "2017-12-21T19:51:21Z"
+                  },
+                  {
+                    "author": {
+                      "user": {
+                        "login": "realnotabot",
+                        "url": "https://github.com/realnotabot"
+                      }
+                    },
+                    "message": "cde 345",
+                    "committedDate": "2017-12-21T19:53:01Z"
+                  }
+                ],
+                "author": {
+                  "login": "realnotabot",
+                  "url": "https://github.com/realnotabot"
+                }
               },
             ],
             "pageInfo": {
