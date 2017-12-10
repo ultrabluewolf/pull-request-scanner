@@ -7,6 +7,7 @@ const config = require('config');
 const logger = require('./config/logger')('pull-requestor');
 
 const github = require('./api').services.github;
+const githubStats = require('./api').services.githubStats;
 
 logger.info('script running...');
 
@@ -24,10 +25,18 @@ const maxPullRequests = config.get('github.limits.pullrequests'); // per repo
 github.fetchRepos(organization, maxRepos)
   .then((data) => github.fetchPullRequestsForRepos(data.organization.repositories, maxPullRequests))
   .then((data) => {
-    const stats = github.getTotalPullRequestsFromResponses(data);
-    const prStats = github.getNumberOfPullRequestMergedPerWeek(data);
-    const avgAndMeds = github.getAvgAndMedianOfPullRequestMergedFromCreationToMergePerWeek(data);
-    logger.info({ data: { total: stats.total, repos: data.length, stats } }, 'total pull requests');
-    logger.info({ data: { /*numPRs: prStats,*/ avgAndMeds } }, 'other pull request metrics');
+    const totals = githubStats.getTotalPullRequestsFromResponses(data);
+    const numPullRequests = githubStats.getNumberOfPullRequestMergedPerWeek(data);
+    const averagesAndMedians = githubStats.getAvgAndMedianDataForPullRequests(data, config.get('github.metrics.timeunit'));
+
+    const summary = {
+      repos: data.length,
+      totals,
+      pullrequests: {
+        totals: numPullRequests,
+        averagesAndMedians,
+      },
+    };
+    logger.info({ data: summary }, 'pull requests metrics');
   })
   .catch((err) => logger.error(err));

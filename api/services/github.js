@@ -18,7 +18,7 @@ const emitLatencyOfQuery = (startTime, query, msg = 'request completed.') => {
   const metadata = { latency: endTime.diff(startTime), query };
   logger.info({ data: metadata }, msg);
   return metadata.latency;
-}
+};
 
 // check for errors in the response and return body of response
 const verifyResponse = (resp) => {
@@ -124,6 +124,20 @@ const fetchPullRequests = (name, owner, max = 100, perPage = 100, afterId = null
             login
             url
           }
+          commits(first: 100) {
+            nodes {
+              commit {
+                committedDate
+                message
+                author {
+                  user {
+                    login
+                    url
+                  }
+                }
+              }
+            }
+          }
         }
         pageInfo {
           hasNextPage
@@ -141,6 +155,11 @@ const fetchPullRequests = (name, owner, max = 100, perPage = 100, afterId = null
     const results = Object.assign({}, data);
     results.repository.pageInfo = results.repository.pullRequests.pageInfo;
     results.repository.pullRequests = results.repository.pullRequests.nodes;
+    results.repository.pullRequests
+      .map((pullRequest) => {
+        pullRequest.commits = pullRequest.commits.nodes
+          .map(({ commit }) => commit);
+      });
     return results;
   };
 
@@ -184,90 +203,10 @@ const fetchPullRequests = (name, owner, max = 100, perPage = 100, afterId = null
 const fetchPullRequestsForRepos = (repos, max = 100, perPage = 100) => {
   const helper = (repo) => fetchPullRequests(repo.name, repo.owner.login, max, perPage);
   return Promise.map(repos, helper);
-}
-
-// determine pull requests totals from fetched pull request responses
-const getTotalPullRequestsFromResponses = (data) => {
-  const result = { repos: {} };
-  result.total = data
-    .map((repo) => {
-      return {
-        repo: repo.repository.name,
-        count: repo.repository.pullRequests.length,
-      };
-    })
-    .map((data) => {
-      result.repos[data.repo] = data.count;
-      return data;
-    })
-    .reduce((acm, repo) => repo.count + acm, 0);
-    return result;
-};
-
-const MERGED = 'MERGED';
-
-const getStartOfWeek = (timestamp) => {
-  const dt = moment(timestamp);
-  const startOfWeek = dt.clone().day('Sunday');
-  const startOfWeekStr = startOfWeek.utc().format('YYYY-MM-DD');
-  return startOfWeekStr;
-};
-
-const getNumberOfPullRequestMergedPerWeek = (data) => {
-  const result = { repos: {} };
-  logger.debug('-----------------');
-  // logger.debug(data);
-  result.repos.pullRequests = data.map(({ repository }) => {
-    return repository.pullRequests.reduce((acm, pullRequest) => {
-      if (pullRequest.state === MERGED) {
-        const startOfWeekStr = getStartOfWeek(pullRequest.mergedAt);
-        if (!acm[startOfWeekStr]) {
-          acm[startOfWeekStr] = 0;
-        }
-        acm[startOfWeekStr] += 1;
-      }
-      return acm;
-    }, { });
-  });
-  return result;
-};
-
-const getAvgAndMedianOfPullRequestMergedFromCreationToMergePerWeek = (data) => {
-  const result = { repos: {} };
-  logger.debug('-----------------');
-  // logger.debug(data);
-  result.repos.pullRequests = data.map(({ repository }) => {
-    const diffs = repository.pullRequests.map((pullRequest) => {
-      if (pullRequest.state === MERGED) {
-        const startOfWeekStr = getStartOfWeek(pullRequest.mergedAt);
-        const diff = moment(pullRequest.mergedAt).diff(pullRequest.createdAt);
-        return diff;
-      }
-      return null;
-    })
-    .filter((timestamp) => timestamp);
-
-    diffs.sort((a, b) => a - b);
-    const avg = diffs.reduce((acm, diff) => acm + diff, 0) / diffs.length;
-    const middleIdx = diffs.length/2;
-    let median = diffs[middleIdx];
-    if (diffs.length % 2 === 1) { // Wat?
-      const leftIdx = Math.floor(middleIdx);
-      const rightIdx = Math.ceil(middleIdx);
-      median = (diffs[leftIdx] + diffs[rightIdx]) / 2;
-      logger.debug({ data:{ avg, median, middleIdx, rightIdx, leftIdx, diffs } }, '#1');
-    }
-    logger.debug({ data:{ avg, median, middleIdx, diffs } }, '#2');
-    return { avg, median };
-  });
-  return result;
 };
 
 module.exports = {
   fetchRepos,
   fetchPullRequests,
   fetchPullRequestsForRepos,
-  getTotalPullRequestsFromResponses,
-  getNumberOfPullRequestMergedPerWeek,
-  getAvgAndMedianOfPullRequestMergedFromCreationToMergePerWeek,
 };

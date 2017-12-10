@@ -57,32 +57,4 @@ describe('github-service', () => {
 
   });
 
-  describe('::getTotalPullRequestsFromResponses()', () => {
-
-    it('should calculate pull request totals', () => {
-
-      const orgs = Object.keys(mocks.pullrequests.responses);
-      return Promise.each(orgs, (org) => {
-
-        const repos = Object.keys(mocks.pullrequests.responses[org]);
-        return Promise.map(repos, (repo) => {
-
-          const mockResp = mocks.pullrequests.responses[org][repo];
-
-          const scope = nock(config.get('github.url'))
-            .post('')
-            .reply(200, mockResp);
-
-          return github.fetchPullRequests(repo, org);
-        })
-        .then((data) => github.getTotalPullRequestsFromResponses(data))
-        .then((data) => {
-          assert.deepEqual(data, mocks.pullrequests.expected.totals[org]);
-        });
-      });
-
-    });
-
-  });
-
 });
