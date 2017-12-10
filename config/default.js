@@ -11,6 +11,9 @@ module.exports = {
       repos: 100,
       pullrequests: 5000,
     },
+    metrics: {
+      timeunit: 'hours',
+    },
   },
 
 };

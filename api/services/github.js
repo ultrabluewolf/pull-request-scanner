@@ -18,7 +18,7 @@ const emitLatencyOfQuery = (startTime, query, msg = 'request completed.') => {
   const metadata = { latency: endTime.diff(startTime), query };
   logger.info({ data: metadata }, msg);
   return metadata.latency;
-}
+};
 
 // check for errors in the response and return body of response
 const verifyResponse = (resp) => {
@@ -120,9 +120,26 @@ const fetchPullRequests = (name, owner, max = 100, perPage = 100, afterId = null
           mergedAt
           merged
           closed
+          changedFiles
+          additions
+          deletions
           author {
             login
             url
+          }
+          commits(first: 100) {
+            nodes {
+              commit {
+                committedDate
+                message
+                author {
+                  user {
+                    login
+                    url
+                  }
+                }
+              }
+            }
           }
         }
         pageInfo {
@@ -141,6 +158,11 @@ const fetchPullRequests = (name, owner, max = 100, perPage = 100, afterId = null
     const results = Object.assign({}, data);
     results.repository.pageInfo = results.repository.pullRequests.pageInfo;
     results.repository.pullRequests = results.repository.pullRequests.nodes;
+    results.repository.pullRequests
+      .map((pullRequest) => {
+        pullRequest.commits = pullRequest.commits.nodes
+          .map(({ commit }) => commit);
+      });
     return results;
   };
 
@@ -184,29 +206,10 @@ const fetchPullRequests = (name, owner, max = 100, perPage = 100, afterId = null
 const fetchPullRequestsForRepos = (repos, max = 100, perPage = 100) => {
   const helper = (repo) => fetchPullRequests(repo.name, repo.owner.login, max, perPage);
   return Promise.map(repos, helper);
-}
-
-// determine pull requests totals from fetched pull request responses
-const getTotalPullRequestsFromResponses = (data) => {
-  const result = { repos: {} };
-  result.total = data
-    .map((repo) => {
-      return {
-        repo: repo.repository.name,
-        count: repo.repository.pullRequests.length,
-      };
-    })
-    .map((data) => {
-      result.repos[data.repo] = data.count;
-      return data;
-    })
-    .reduce((acm, repo) => repo.count + acm, 0);
-    return result;
 };
 
 module.exports = {
   fetchRepos,
   fetchPullRequests,
   fetchPullRequestsForRepos,
-  getTotalPullRequestsFromResponses,
 };

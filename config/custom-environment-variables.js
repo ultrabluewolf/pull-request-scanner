@@ -13,6 +13,9 @@ module.exports = {
       repos: 'GITHUB_MAX_REPOS',
       pullrequests: 'GITHUB_MAX_PULLREQUESTS',
     },
+    metrics: {
+      timeunit: 'GITHUB_METRICS_TIMEUNIT',
+    },
   },
 
 };

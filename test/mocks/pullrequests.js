@@ -25,9 +25,28 @@ module.exports = {
                   "mergedAt": "2017-10-02T14:02:14Z",
                   "merged": true,
                   "closed": true,
+                  "changedFiles": 2,
+                  "additions": 10,
+                  "deletions": 12,
                   "author": {
                     "login": "notabot",
                     "url": "https://github.com/notabot"
+                  },
+                  "commits": {
+                    "nodes": [
+                      {
+                        "commit": {
+                          "committedDate": "2017-10-02T04:01:30Z",
+                          "message": "My commit",
+                          "author": {
+                            "user": {
+                              "login": "notabot",
+                              "url": "https://github.com/notabot"
+                            }
+                          }
+                        }
+                      }
+                    ]
                   }
                 },
               ],
@@ -63,9 +82,52 @@ module.exports = {
                   "mergedAt": "2017-10-02T14:02:14Z",
                   "merged": true,
                   "closed": true,
+                  "changedFiles": 3,
+                  "additions": 20,
+                  "deletions": 3,
                   "author": {
                     "login": "realnotabot",
                     "url": "https://github.com/realnotabot"
+                  },
+                  "commits": {
+                    "nodes": [
+                      {
+                        "commit": {
+                          "committedDate": "2017-10-02T03:31:11Z",
+                          "message": "My cool commit",
+                          "author": {
+                            "user": {
+                              "login": "realnotabot",
+                              "url": "https://github.com/realnotabot"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "commit": {
+                          "committedDate": "2017-10-02T03:51:45Z",
+                          "message": "My cool commit #2",
+                          "author": {
+                            "user": {
+                              "login": "realnotabot",
+                              "url": "https://github.com/realnotabot"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "commit": {
+                          "committedDate": "2017-10-02T03:59:00Z",
+                          "message": "My cool commit #3",
+                          "author": {
+                            "user": {
+                              "login": "realnotabot",
+                              "url": "https://github.com/realnotabot"
+                            }
+                          }
+                        }
+                      }
+                    ]
                   }
                 },
                 {
@@ -82,9 +144,40 @@ module.exports = {
                   "mergedAt": "2017-10-03T11:33:22Z",
                   "merged": true,
                   "closed": true,
+                  "changedFiles": 7,
+                  "additions": 4,
+                  "deletions": 9,
                   "author": {
                     "login": "realnotabot",
                     "url": "https://github.com/realnotabot"
+                  },
+                  "commits": {
+                    "nodes": [
+                      {
+                        "commit": {
+                          "committedDate": "2017-10-03T05:01:21Z",
+                          "message": "My bad commit",
+                          "author": {
+                            "user": {
+                              "login": "realnotabot",
+                              "url": "https://github.com/realnotabot"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "commit": {
+                          "committedDate": "2017-10-03T05:42:48Z",
+                          "message": "My awesome commit",
+                          "author": {
+                            "user": {
+                              "login": "realnotabot",
+                              "url": "https://github.com/realnotabot"
+                            }
+                          }
+                        }
+                      }
+                    ]
                   }
                 },
               ],
@@ -125,10 +218,25 @@ module.exports = {
                 "mergedAt": "2017-10-02T14:02:14Z",
                 "merged": true,
                 "closed": true,
+                "changedFiles": 2,
+                "additions": 10,
+                "deletions": 12,
                 "author": {
                   "login": "notabot",
                   "url": "https://github.com/notabot"
-                }
+                },
+                "commits": [
+                  {
+                    "committedDate": "2017-10-02T04:01:30Z",
+                    "message": "My commit",
+                    "author": {
+                      "user": {
+                        "login": "notabot",
+                        "url": "https://github.com/notabot"
+                      }
+                    }
+                  }
+                ]
               }
             ],
             "pageInfo": {
@@ -159,10 +267,45 @@ module.exports = {
                 "mergedAt": "2017-10-02T14:02:14Z",
                 "merged": true,
                 "closed": true,
+                "changedFiles": 3,
+                "additions": 20,
+                "deletions": 3,
                 "author": {
                   "login": "realnotabot",
                   "url": "https://github.com/realnotabot"
-                }
+                },
+                "commits": [
+                  {
+                    "committedDate": "2017-10-02T03:31:11Z",
+                    "message": "My cool commit",
+                    "author": {
+                      "user": {
+                        "login": "realnotabot",
+                        "url": "https://github.com/realnotabot"
+                      }
+                    }
+                  },
+                  {
+                    "committedDate": "2017-10-02T03:51:45Z",
+                    "message": "My cool commit #2",
+                    "author": {
+                      "user": {
+                        "login": "realnotabot",
+                        "url": "https://github.com/realnotabot"
+                      }
+                    }
+                  },
+                  {
+                    "committedDate": "2017-10-02T03:59:00Z",
+                    "message": "My cool commit #3",
+                    "author": {
+                      "user": {
+                        "login": "realnotabot",
+                        "url": "https://github.com/realnotabot"
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "title": "Add README & LICENSE... again.",
@@ -178,10 +321,35 @@ module.exports = {
                 "mergedAt": "2017-10-03T11:33:22Z",
                 "merged": true,
                 "closed": true,
+                "changedFiles": 7,
+                "additions": 4,
+                "deletions": 9,
                 "author": {
                   "login": "realnotabot",
                   "url": "https://github.com/realnotabot"
-                }
+                },
+                "commits": [
+                  {
+                    "committedDate": "2017-10-03T05:01:21Z",
+                    "message": "My bad commit",
+                    "author": {
+                      "user": {
+                        "login": "realnotabot",
+                        "url": "https://github.com/realnotabot"
+                      }
+                    }
+                  },
+                  {
+                    "committedDate": "2017-10-03T05:42:48Z",
+                    "message": "My awesome commit",
+                    "author": {
+                      "user": {
+                        "login": "realnotabot",
+                        "url": "https://github.com/realnotabot"
+                      }
+                    }
+                  }
+                ]
               }
             ],
             "pageInfo": {
@@ -192,16 +360,6 @@ module.exports = {
             }
           }
         }
-      },
-    },
-
-    totals: {
-      myorg: {
-        "repos": {
-          "myrepo": 1,
-          "my-better-repo": 2
-        },
-        "total": 3
       },
     },
 
