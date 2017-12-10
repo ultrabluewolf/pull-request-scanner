@@ -113,20 +113,31 @@ const getAvgAndMedianDataForPullRequests = (data, _timeUnit = 'minutes') => {
 
     // construct list of diffs for merged times by week
     const diffs = repository.pullRequests.reduce((innerAcm, pullRequest) => {
+      const diffValues = {};
+      const startOfWeekStr = getStartOfWeek(pullRequest.mergedAt || pullRequest.closedAt);
+      const logData = {};
+
+      if (!innerAcm[startOfWeekStr]) {
+        innerAcm[startOfWeekStr] = {
+          totalCommits: [],
+          totalFiles: [],
+          lineAdditions: [],
+          lineDeletions: [],
+        };
+      }
+
       if (pullRequest.state === MERGED) {
-        const startOfWeekStr = getStartOfWeek(pullRequest.mergedAt);
-        if (!innerAcm[startOfWeekStr]) {
-          innerAcm[startOfWeekStr] = {
+        if (!innerAcm[startOfWeekStr].creation) {
+          Object.assign(innerAcm[startOfWeekStr], {
             creation: [],
+          });
+        }
+        if (!innerAcm[startOfWeekStr].firstCommit) {
+          Object.assign(innerAcm[startOfWeekStr], {
             firstCommit: [],
-            totalCommits: [],
-            totalFiles: [],
-            lineAdditions: [],
-            lineDeletions: [],
-          };
+          });
         }
 
-        const diffValues = {};
         // by creation
         diffValues.creation = moment(pullRequest.mergedAt).diff(pullRequest.createdAt, timeUnit) / timeUnitDivideBy;
 
@@ -135,32 +146,34 @@ const getAvgAndMedianDataForPullRequests = (data, _timeUnit = 'minutes') => {
           .sort((a, b) => a.committedDate - b.committedDate);
         diffValues.firstCommit = (moment(pullRequest.mergedAt).diff(commits[0].committedDate, timeUnit) / timeUnitDivideBy);
 
-        // by number of commits
-        diffValues.totalCommits = commits.length;
-
-        // by number of files
-        diffValues.totalFiles = pullRequest.changedFiles;
-
-        // by number of line additions and deletions
-        // note: there doesn't seem to be a way to determine number of lines changed
-        diffValues.lineAdditions = pullRequest.additions;
-        diffValues.lineDeletions = pullRequest.deletions;
-
-        const logData = {
+        Object.assign(logData, {
           commits,
           commit: commits[0],
           createdAt: pullRequest.createdAt,
           mergedAt: pullRequest.mergedAt,
-          diffValues,
-        };
-        logger.trace({ data: logData }, 'creation|commit vs merged timestamps');
-
-        // add diffs to lists
-        Object.keys(diffValues).map((k) => {
-          innerAcm[startOfWeekStr][k].push(diffValues[k]);
+          closedAt: pullRequest.closedAt,
         });
-        return innerAcm;
       }
+
+      // by number of commits
+      diffValues.totalCommits = pullRequest.commits.length;
+      // by number of files
+      diffValues.totalFiles = pullRequest.changedFiles;
+      // by number of line additions and deletions
+      // note: there doesn't seem to be a way to determine number of lines changed
+      diffValues.lineAdditions = pullRequest.additions;
+      diffValues.lineDeletions = pullRequest.deletions;
+
+      Object.assign(logData, {
+        diffValues,
+      });
+      logger.trace({ data: logData }, 'pull request diff values');
+
+      // add diffs to lists
+      Object.keys(diffValues).map((k) => {
+        innerAcm[startOfWeekStr][k].push(diffValues[k]);
+      });
+
       return innerAcm;
     }, {});
 
