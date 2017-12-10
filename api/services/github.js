@@ -121,6 +121,8 @@ const fetchPullRequests = (name, owner, max = 100, perPage = 100, afterId = null
           merged
           closed
           changedFiles
+          additions
+          deletions
           author {
             login
             url

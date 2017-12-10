@@ -121,6 +121,8 @@ const getAvgAndMedianDataForPullRequests = (data, _timeUnit = 'minutes') => {
             firstCommit: [],
             totalCommits: [],
             totalFiles: [],
+            lineAdditions: [],
+            lineDeletions: [],
           };
         }
 
@@ -138,6 +140,11 @@ const getAvgAndMedianDataForPullRequests = (data, _timeUnit = 'minutes') => {
 
         // by number of files
         diffValues.totalFiles = pullRequest.changedFiles;
+
+        // by number of line additions and deletions
+        // note: there doesn't seem to be a way to determine number of lines changed
+        diffValues.lineAdditions = pullRequest.additions;
+        diffValues.lineDeletions = pullRequest.deletions;
 
         const logData = {
           commits,

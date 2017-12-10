@@ -36,6 +36,14 @@ module.exports = {
                 "avg": 2,
                 "median": 2
               },
+              "lineAdditions": {
+                "avg": 10,
+                "median": 10
+              },
+              "lineDeletions": {
+                "avg": 12,
+                "median": 12
+              },
             }
           },
 
@@ -56,6 +64,14 @@ module.exports = {
               "totalFiles": {
                 "avg": 5,
                 "median": 5
+              },
+              "lineAdditions": {
+                "avg": 12,
+                "median": 12
+              },
+              "lineDeletions": {
+                "avg": 6,
+                "median": 6
               },
             }
           },

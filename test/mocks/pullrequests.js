@@ -26,6 +26,8 @@ module.exports = {
                   "merged": true,
                   "closed": true,
                   "changedFiles": 2,
+                  "additions": 10,
+                  "deletions": 12,
                   "author": {
                     "login": "notabot",
                     "url": "https://github.com/notabot"
@@ -81,6 +83,8 @@ module.exports = {
                   "merged": true,
                   "closed": true,
                   "changedFiles": 3,
+                  "additions": 20,
+                  "deletions": 3,
                   "author": {
                     "login": "realnotabot",
                     "url": "https://github.com/realnotabot"
@@ -141,6 +145,8 @@ module.exports = {
                   "merged": true,
                   "closed": true,
                   "changedFiles": 7,
+                  "additions": 4,
+                  "deletions": 9,
                   "author": {
                     "login": "realnotabot",
                     "url": "https://github.com/realnotabot"
@@ -213,6 +219,8 @@ module.exports = {
                 "merged": true,
                 "closed": true,
                 "changedFiles": 2,
+                "additions": 10,
+                "deletions": 12,
                 "author": {
                   "login": "notabot",
                   "url": "https://github.com/notabot"
@@ -260,6 +268,8 @@ module.exports = {
                 "merged": true,
                 "closed": true,
                 "changedFiles": 3,
+                "additions": 20,
+                "deletions": 3,
                 "author": {
                   "login": "realnotabot",
                   "url": "https://github.com/realnotabot"
@@ -312,6 +322,8 @@ module.exports = {
                 "merged": true,
                 "closed": true,
                 "changedFiles": 7,
+                "additions": 4,
+                "deletions": 9,
                 "author": {
                   "login": "realnotabot",
                   "url": "https://github.com/realnotabot"
