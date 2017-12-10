@@ -191,6 +191,299 @@ module.exports = {
           }
         }
       },
+
+      'my-beta-repo': {
+        "data": {
+          "repository": {
+            "name": "my-beta-repo",
+            "url": "https://github.com/myorg/my-beta-repo",
+            "pullRequests": {
+              "nodes": [
+                {
+                  "title": "Add a Cool Feature",
+                  "state": "MERGED",
+                  "id": "4343",
+                  "number": 1,
+                  "url": "https://github.com/myorg/my-beta-repo/pull/1",
+                  "bodyText": "",
+                  "createdAt": "2017-11-18T06:55:53Z",
+                  "lastEditedAt": null,
+                  "publishedAt": "2017-11-18T06:55:53Z",
+                  "closedAt": "2017-11-18T14:02:14Z",
+                  "mergedAt": "2017-11-18T14:02:14Z",
+                  "merged": true,
+                  "closed": true,
+                  "changedFiles": 30,
+                  "additions": 30,
+                  "deletions": 4,
+                  "author": {
+                    "login": "realnotabot",
+                    "url": "https://github.com/realnotabot"
+                  },
+                  "commits": {
+                    "nodes": [
+                      {
+                        "commit": {
+                          "committedDate": "2017-11-18T03:31:11Z",
+                          "message": "My cool commit",
+                          "author": {
+                            "user": {
+                              "login": "realnotabot",
+                              "url": "https://github.com/realnotabot"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "commit": {
+                          "committedDate": "2017-11-18T03:51:45Z",
+                          "message": "My cool commit #2",
+                          "author": {
+                            "user": {
+                              "login": "realnotabot",
+                              "url": "https://github.com/realnotabot"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "commit": {
+                          "committedDate": "2017-11-18T04:01:25Z",
+                          "message": "My cool commit #3",
+                          "author": {
+                            "user": {
+                              "login": "realnotabot",
+                              "url": "https://github.com/realnotabot"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "commit": {
+                          "committedDate": "2017-11-18T04:12:00Z",
+                          "message": "My cool commit #4",
+                          "author": {
+                            "user": {
+                              "login": "realnotabot",
+                              "url": "https://github.com/realnotabot"
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "title": "Add a feature that we no longer wanted",
+                  "state": "CLOSED",
+                  "id": "4343",
+                  "number": 2,
+                  "url": "https://github.com/myorg/my-beta-repo/pull/2",
+                  "bodyText": "",
+                  "createdAt": "2017-11-25T20:01:33Z",
+                  "lastEditedAt": null,
+                  "publishedAt": "2017-11-25T20:01:33Z",
+                  "closedAt": "2017-12-10T11:33:22Z",
+                  "mergedAt": null,
+                  "merged": false,
+                  "closed": true,
+                  "changedFiles": 7,
+                  "additions": 4,
+                  "deletions": 9,
+                  "author": {
+                    "login": "realnotabot",
+                    "url": "https://github.com/realnotabot"
+                  },
+                  "commits": {
+                    "nodes": [
+                      {
+                        "commit": {
+                          "committedDate": "2017-11-20T15:01:21Z",
+                          "message": "My bad commit",
+                          "author": {
+                            "user": {
+                              "login": "realnotabot",
+                              "url": "https://github.com/realnotabot"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "commit": {
+                          "committedDate": "2017-11-20T15:42:48Z",
+                          "message": "My awesome commit",
+                          "author": {
+                            "user": {
+                              "login": "realnotabot",
+                              "url": "https://github.com/realnotabot"
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "title": "Add Another Cool Feature",
+                  "state": "MERGED",
+                  "id": "4343",
+                  "number": 1,
+                  "url": "https://github.com/myorg/my-beta-repo/pull/3",
+                  "bodyText": "",
+                  "createdAt": "2017-12-18T06:55:53Z",
+                  "lastEditedAt": null,
+                  "publishedAt": "2017-12-18T06:55:53Z",
+                  "closedAt": "2017-12-18T14:02:14Z",
+                  "mergedAt": "2017-12-18T14:02:14Z",
+                  "merged": true,
+                  "closed": true,
+                  "changedFiles": 15,
+                  "additions": 23,
+                  "deletions": 25,
+                  "author": {
+                    "login": "realnotabot",
+                    "url": "https://github.com/realnotabot"
+                  },
+                  "commits": {
+                    "nodes": [
+                      {
+                        "commit": {
+                          "committedDate": "2017-12-18T03:31:11Z",
+                          "message": "My cool commit",
+                          "author": {
+                            "user": {
+                              "login": "realnotabot",
+                              "url": "https://github.com/realnotabot"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "commit": {
+                          "committedDate": "2017-12-18T03:51:45Z",
+                          "message": "My cool commit #2",
+                          "author": {
+                            "user": {
+                              "login": "realnotabot",
+                              "url": "https://github.com/realnotabot"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "commit": {
+                          "committedDate": "2017-12-18T04:01:25Z",
+                          "message": "My cool commit #3",
+                          "author": {
+                            "user": {
+                              "login": "realnotabot",
+                              "url": "https://github.com/realnotabot"
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "commit": {
+                          "committedDate": "2017-12-18T04:12:00Z",
+                          "message": "My cool commit #4",
+                          "author": {
+                            "user": {
+                              "login": "realnotabot",
+                              "url": "https://github.com/realnotabot"
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "title": "Tweaking a Weird Component",
+                  "state": "MERGED",
+                  "id": "4343",
+                  "number": 1,
+                  "url": "https://github.com/myorg/my-beta-repo/pull/4",
+                  "bodyText": "",
+                  "createdAt": "2017-12-20T22:02:23Z",
+                  "lastEditedAt": null,
+                  "publishedAt": "2017-12-20T22:02:23Z",
+                  "closedAt": "2017-12-22T14:02:14Z",
+                  "mergedAt": "2017-12-22T14:02:14Z",
+                  "merged": true,
+                  "closed": true,
+                  "changedFiles": 3,
+                  "additions": 8,
+                  "deletions": 12,
+                  "author": {
+                    "login": "realnotabot",
+                    "url": "https://github.com/realnotabot"
+                  },
+                  "commits": {
+                    "nodes": [
+                      {
+                        "commit": {
+                          "committedDate": "2017-12-20T03:31:11Z",
+                          "message": "My cool commit",
+                          "author": {
+                            "user": {
+                              "login": "realnotabot",
+                              "url": "https://github.com/realnotabot"
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "title": "Tweaking Other Weird Component",
+                  "state": "MERGED",
+                  "id": "4343",
+                  "number": 1,
+                  "url": "https://github.com/myorg/my-beta-repo/pull/5",
+                  "bodyText": "",
+                  "createdAt": "2017-12-20T23:22:23Z",
+                  "lastEditedAt": null,
+                  "publishedAt": "2017-12-20T23:22:23Z",
+                  "closedAt": "2017-12-22T10:02:14Z",
+                  "mergedAt": "2017-12-22T10:02:14Z",
+                  "merged": true,
+                  "closed": true,
+                  "changedFiles": 4,
+                  "additions": 3,
+                  "deletions": 10,
+                  "author": {
+                    "login": "realnotabot",
+                    "url": "https://github.com/realnotabot"
+                  },
+                  "commits": {
+                    "nodes": [
+                      {
+                        "commit": {
+                          "committedDate": "2017-12-20T01:59:01Z",
+                          "message": "My cool commit",
+                          "author": {
+                            "user": {
+                              "login": "realnotabot",
+                              "url": "https://github.com/realnotabot"
+                            }
+                          },
+                        }
+                      }
+                    ]
+                  },
+                },
+              ],
+              "pageInfo": {
+                "hasNextPage": false,
+                "startCursor": "Y3Vyc29yOnYyOpHOBFTBQA==",
+                "hasPreviousPage": false,
+                "endCursor": "Y3Vyc29yOnYyOpHOBg+zyQ=="
+              }
+            }
+          }
+        }
+      },
     },
 
   },
@@ -359,7 +652,263 @@ module.exports = {
               "endCursor": "Y3Vyc29yOnYyOpHOBg+zyQ=="
             }
           }
-        }
+        },
+
+        'my-beta-repo': {
+          "repository": {
+            "name": "my-beta-repo",
+            "url": "https://github.com/myorg/my-beta-repo",
+            "pullRequests": [
+              {
+                "title": "Add a Cool Feature",
+                "state": "MERGED",
+                "id": "4343",
+                "number": 1,
+                "url": "https://github.com/myorg/my-beta-repo/pull/1",
+                "bodyText": "",
+                "createdAt": "2017-11-18T06:55:53Z",
+                "lastEditedAt": null,
+                "publishedAt": "2017-11-18T06:55:53Z",
+                "closedAt": "2017-11-18T14:02:14Z",
+                "mergedAt": "2017-11-18T14:02:14Z",
+                "merged": true,
+                "closed": true,
+                "changedFiles": 30,
+                "additions": 30,
+                "deletions": 4,
+                "author": {
+                  "login": "realnotabot",
+                  "url": "https://github.com/realnotabot"
+                },
+                "commits": [
+                  {
+                    "committedDate": "2017-11-18T03:31:11Z",
+                    "message": "My cool commit",
+                    "author": {
+                      "user": {
+                        "login": "realnotabot",
+                        "url": "https://github.com/realnotabot"
+                      }
+                    }
+                  },
+                  {
+                    "committedDate": "2017-11-18T03:51:45Z",
+                    "message": "My cool commit #2",
+                    "author": {
+                      "user": {
+                        "login": "realnotabot",
+                        "url": "https://github.com/realnotabot"
+                      }
+                    }
+                  },
+                  {
+                    "committedDate": "2017-11-18T04:01:25Z",
+                    "message": "My cool commit #3",
+                    "author": {
+                      "user": {
+                        "login": "realnotabot",
+                        "url": "https://github.com/realnotabot"
+                      }
+                    }
+                  },
+                  {
+                    "committedDate": "2017-11-18T04:12:00Z",
+                    "message": "My cool commit #4",
+                    "author": {
+                      "user": {
+                        "login": "realnotabot",
+                        "url": "https://github.com/realnotabot"
+                      }
+                    }
+                  }
+                ],
+              },
+              {
+                "title": "Add a feature that we no longer wanted",
+                "state": "CLOSED",
+                "id": "4343",
+                "number": 2,
+                "url": "https://github.com/myorg/my-beta-repo/pull/2",
+                "bodyText": "",
+                "createdAt": "2017-11-25T20:01:33Z",
+                "lastEditedAt": null,
+                "publishedAt": "2017-11-25T20:01:33Z",
+                "closedAt": "2017-12-10T11:33:22Z",
+                "mergedAt": null,
+                "merged": false,
+                "closed": true,
+                "changedFiles": 7,
+                "additions": 4,
+                "deletions": 9,
+                "author": {
+                  "login": "realnotabot",
+                  "url": "https://github.com/realnotabot"
+                },
+                "commits": [
+                  {
+                    "committedDate": "2017-11-20T15:01:21Z",
+                    "message": "My bad commit",
+                    "author": {
+                      "user": {
+                        "login": "realnotabot",
+                        "url": "https://github.com/realnotabot"
+                      }
+                    }
+                  },
+                  {
+                    "committedDate": "2017-11-20T15:42:48Z",
+                    "message": "My awesome commit",
+                    "author": {
+                      "user": {
+                        "login": "realnotabot",
+                        "url": "https://github.com/realnotabot"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "title": "Add Another Cool Feature",
+                "state": "MERGED",
+                "id": "4343",
+                "number": 1,
+                "url": "https://github.com/myorg/my-beta-repo/pull/3",
+                "bodyText": "",
+                "createdAt": "2017-12-18T06:55:53Z",
+                "lastEditedAt": null,
+                "publishedAt": "2017-12-18T06:55:53Z",
+                "closedAt": "2017-12-18T14:02:14Z",
+                "mergedAt": "2017-12-18T14:02:14Z",
+                "merged": true,
+                "closed": true,
+                "changedFiles": 15,
+                "additions": 23,
+                "deletions": 25,
+                "author": {
+                  "login": "realnotabot",
+                  "url": "https://github.com/realnotabot"
+                },
+                "commits": [
+                  {
+                    "committedDate": "2017-12-18T03:31:11Z",
+                    "message": "My cool commit",
+                    "author": {
+                      "user": {
+                        "login": "realnotabot",
+                        "url": "https://github.com/realnotabot"
+                      }
+                    }
+                  },
+                  {
+                    "committedDate": "2017-12-18T03:51:45Z",
+                    "message": "My cool commit #2",
+                    "author": {
+                      "user": {
+                        "login": "realnotabot",
+                        "url": "https://github.com/realnotabot"
+                      }
+                    }
+                  },
+                  {
+                    "committedDate": "2017-12-18T04:01:25Z",
+                    "message": "My cool commit #3",
+                    "author": {
+                      "user": {
+                        "login": "realnotabot",
+                        "url": "https://github.com/realnotabot"
+                      }
+                    }
+                  },
+                  {
+                    "committedDate": "2017-12-18T04:12:00Z",
+                    "message": "My cool commit #4",
+                    "author": {
+                      "user": {
+                        "login": "realnotabot",
+                        "url": "https://github.com/realnotabot"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "title": "Tweaking a Weird Component",
+                "state": "MERGED",
+                "id": "4343",
+                "number": 1,
+                "url": "https://github.com/myorg/my-beta-repo/pull/4",
+                "bodyText": "",
+                "createdAt": "2017-12-20T22:02:23Z",
+                "lastEditedAt": null,
+                "publishedAt": "2017-12-20T22:02:23Z",
+                "closedAt": "2017-12-22T14:02:14Z",
+                "mergedAt": "2017-12-22T14:02:14Z",
+                "merged": true,
+                "closed": true,
+                "changedFiles": 3,
+                "additions": 8,
+                "deletions": 12,
+                "author": {
+                  "login": "realnotabot",
+                  "url": "https://github.com/realnotabot"
+                },
+                "commits": [
+                  {
+                    "committedDate": "2017-12-20T03:31:11Z",
+                    "message": "My cool commit",
+                    "author": {
+                      "user": {
+                        "login": "realnotabot",
+                        "url": "https://github.com/realnotabot"
+                      }
+                    }
+                  }
+                ],
+              },
+              {
+                "title": "Tweaking Other Weird Component",
+                "state": "MERGED",
+                "id": "4343",
+                "number": 1,
+                "url": "https://github.com/myorg/my-beta-repo/pull/5",
+                "bodyText": "",
+                "createdAt": "2017-12-20T23:22:23Z",
+                "lastEditedAt": null,
+                "publishedAt": "2017-12-20T23:22:23Z",
+                "closedAt": "2017-12-22T10:02:14Z",
+                "mergedAt": "2017-12-22T10:02:14Z",
+                "merged": true,
+                "closed": true,
+                "changedFiles": 4,
+                "additions": 3,
+                "deletions": 10,
+                "author": {
+                  "login": "realnotabot",
+                  "url": "https://github.com/realnotabot"
+                },
+                "commits": [
+                  {
+                    "committedDate": "2017-12-20T01:59:01Z",
+                    "message": "My cool commit",
+                    "author": {
+                      "user": {
+                        "login": "realnotabot",
+                        "url": "https://github.com/realnotabot"
+                      }
+                    }
+                  }
+                ],
+              },
+            ],
+            "pageInfo": {
+              "hasNextPage": false,
+              "startCursor": "Y3Vyc29yOnYyOpHOBFTBQA==",
+              "hasPreviousPage": false,
+              "endCursor": "Y3Vyc29yOnYyOpHOBg+zyQ=="
+            }
+          }
+        },
+
       },
     },
 

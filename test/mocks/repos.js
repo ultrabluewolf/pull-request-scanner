@@ -24,6 +24,14 @@ module.exports = {
                   "login": "myorg"
                 }
               },
+              {
+                "id": "125",
+                "name": "my-beta-repo",
+                "url": "https://github.com/myorg/my-beta-repo",
+                "owner": {
+                  "login": "myorg"
+                }
+              },
             ],
             "pageInfo": {
               "hasNextPage": false,
@@ -57,7 +65,15 @@ module.exports = {
             "owner": {
               "login": "myorg"
             }
-          }
+          },
+          {
+            "id": "125",
+            "name": "my-beta-repo",
+            "url": "https://github.com/myorg/my-beta-repo",
+            "owner": {
+              "login": "myorg"
+            }
+          },
         ],
         "pageInfo": {
           "hasNextPage": false,
