@@ -25,6 +25,7 @@ module.exports = {
                   "mergedAt": "2017-10-02T14:02:14Z",
                   "merged": true,
                   "closed": true,
+                  "changedFiles": 2,
                   "author": {
                     "login": "notabot",
                     "url": "https://github.com/notabot"
@@ -79,6 +80,7 @@ module.exports = {
                   "mergedAt": "2017-10-02T14:02:14Z",
                   "merged": true,
                   "closed": true,
+                  "changedFiles": 3,
                   "author": {
                     "login": "realnotabot",
                     "url": "https://github.com/realnotabot"
@@ -138,6 +140,7 @@ module.exports = {
                   "mergedAt": "2017-10-03T11:33:22Z",
                   "merged": true,
                   "closed": true,
+                  "changedFiles": 7,
                   "author": {
                     "login": "realnotabot",
                     "url": "https://github.com/realnotabot"
@@ -209,6 +212,7 @@ module.exports = {
                 "mergedAt": "2017-10-02T14:02:14Z",
                 "merged": true,
                 "closed": true,
+                "changedFiles": 2,
                 "author": {
                   "login": "notabot",
                   "url": "https://github.com/notabot"
@@ -255,6 +259,7 @@ module.exports = {
                 "mergedAt": "2017-10-02T14:02:14Z",
                 "merged": true,
                 "closed": true,
+                "changedFiles": 3,
                 "author": {
                   "login": "realnotabot",
                   "url": "https://github.com/realnotabot"
@@ -306,6 +311,7 @@ module.exports = {
                 "mergedAt": "2017-10-03T11:33:22Z",
                 "merged": true,
                 "closed": true,
+                "changedFiles": 7,
                 "author": {
                   "login": "realnotabot",
                   "url": "https://github.com/realnotabot"

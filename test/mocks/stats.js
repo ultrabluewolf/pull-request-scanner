@@ -32,6 +32,10 @@ module.exports = {
                 "avg": 1,
                 "median": 1
               },
+              "totalFiles": {
+                "avg": 2,
+                "median": 2
+              },
             }
           },
 
@@ -48,6 +52,10 @@ module.exports = {
               "totalCommits": {
                 "avg": 2.5,
                 "median": 2.5
+              },
+              "totalFiles": {
+                "avg": 5,
+                "median": 5
               },
             }
           },

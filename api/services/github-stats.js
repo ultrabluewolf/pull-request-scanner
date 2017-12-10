@@ -120,6 +120,7 @@ const getAvgAndMedianDataForPullRequests = (data, _timeUnit = 'minutes') => {
             creation: [],
             firstCommit: [],
             totalCommits: [],
+            totalFiles: [],
           };
         }
 
@@ -134,6 +135,9 @@ const getAvgAndMedianDataForPullRequests = (data, _timeUnit = 'minutes') => {
 
         // by number of commits
         diffValues.totalCommits = commits.length;
+
+        // by number of files
+        diffValues.totalFiles = pullRequest.changedFiles;
 
         const logData = {
           commits,
