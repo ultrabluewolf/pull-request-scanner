@@ -40,6 +40,34 @@ describe('github-stats-service', () => {
 
   });
 
+  describe('::getNumberOfPullRequestMergedPerWeek()', () => {
+
+    it('should calculate weekly pull request totals', () => {
+
+      const orgs = Object.keys(mocks.pullrequests.responses);
+      return Promise.each(orgs, (org) => {
+
+        const repos = Object.keys(mocks.pullrequests.responses[org]);
+        return Promise.map(repos, (repo) => {
+
+          const mockResp = mocks.pullrequests.responses[org][repo];
+
+          const scope = nock(config.get('github.url'))
+            .post('')
+            .reply(200, mockResp);
+
+          return github.fetchPullRequests(repo, org);
+        })
+        .then((data) => githubStats.getNumberOfPullRequestMergedPerWeek(data))
+        .then((data) => {
+          assert.deepEqual(data, mocks.stats.expected.weeklyTotals[org]);
+        });
+      });
+
+    });
+
+  });
+
   describe('::getAvgAndMedianDataForPullRequests()', () => {
 
     it('should calculate averages and medians for pull request stats', () => {

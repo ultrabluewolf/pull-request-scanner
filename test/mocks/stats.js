@@ -14,6 +14,19 @@ module.exports = {
       },
     },
 
+    weeklyTotals: {
+      myorg: {
+        "repos": {
+          "myrepo": {
+            "2017-10-01": 1
+          },
+          "my-better-repo": {
+            "2017-10-01": 2
+          }
+        }
+      },
+    },
+
     averagesAndMedians: {
       "myorg": {
         "repos": {
