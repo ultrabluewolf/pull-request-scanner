@@ -9,9 +9,9 @@ module.exports = {
         "repos": {
           "myrepo": 1,
           "my-better-repo": 2,
-          "my-beta-repo": 5,
+          "my-beta-repo": 6,
         },
-        "total": 8,
+        "total": 9,
       },
     },
 
@@ -149,20 +149,20 @@ module.exports = {
                 "median": 3363.22
               },
               "totalCommits": {
-                "avg": 2,
-                "median": 1
+                "avg": 2.25,
+                "median": 2
               },
               "totalFiles": {
-                "avg": 7.33,
-                "median": 4
+                "avg": 6,
+                "median": 3.5
               },
               "lineAdditions": {
-                "avg": 11.33,
-                "median": 8
+                "avg": 22,
+                "median": 15.5
               },
               "lineDeletions": {
-                "avg": 15.67,
-                "median": 12
+                "avg": 12.75,
+                "median": 11
               },
             },
           },

@@ -114,7 +114,7 @@ const getAvgAndMedianDataForPullRequests = (data, _timeUnit = 'minutes') => {
     // construct list of diffs for merged times by week
     const diffs = repository.pullRequests.reduce((innerAcm, pullRequest) => {
       const diffValues = {};
-      const startOfWeekStr = getStartOfWeek(pullRequest.mergedAt || pullRequest.closedAt);
+      const startOfWeekStr = getStartOfWeek(pullRequest.mergedAt || pullRequest.closedAt || pullRequest.createdAt);
       const logData = {};
 
       if (!innerAcm[startOfWeekStr]) {
