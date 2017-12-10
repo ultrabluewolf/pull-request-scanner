@@ -27,7 +27,11 @@ module.exports = {
               "firstCommit": {
                 "avg": 600.73,
                 "median": 600.73,
-              }
+              },
+              "totalCommits": {
+                "avg": 1,
+                "median": 1
+              },
             }
           },
 
@@ -40,7 +44,11 @@ module.exports = {
               "firstCommit": {
                 "avg": 511.53,
                 "median": 511.53,
-              }
+              },
+              "totalCommits": {
+                "avg": 2.5,
+                "median": 2.5
+              },
             }
           },
 

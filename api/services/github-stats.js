@@ -119,6 +119,7 @@ const getAvgAndMedianDataForPullRequests = (data, _timeUnit = 'minutes') => {
           innerAcm[startOfWeekStr] = {
             creation: [],
             firstCommit: [],
+            totalCommits: [],
           };
         }
 
@@ -130,7 +131,10 @@ const getAvgAndMedianDataForPullRequests = (data, _timeUnit = 'minutes') => {
         const commits = [...pullRequest.commits]
           .sort((a, b) => a.committedDate - b.committedDate);
         diffValues.firstCommit = (moment(pullRequest.mergedAt).diff(commits[0].committedDate, timeUnit) / timeUnitDivideBy);
-        
+
+        // by number of commits
+        diffValues.totalCommits = commits.length;
+
         const logData = {
           commits,
           commit: commits[0],
